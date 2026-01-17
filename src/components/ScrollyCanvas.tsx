@@ -13,7 +13,7 @@ type ScrollyCanvasProps = {
   frameUrls?: string[];
   heightVh?: number;
   children?: ReactNode;
-  containerRef?: RefObject<HTMLDivElement>;
+  containerRef?: RefObject<HTMLDivElement | null>;
 };
 
 const clamp = (value: number, min: number, max: number) =>
@@ -115,8 +115,7 @@ export default function ScrollyCanvas({
     drawImageCover(ctx, img, width, height);
   };
   
-
-  
+  useEffect(() => {
     const images = frameUrls.map((src) => {
       const img = new Image();
       img.src = src;

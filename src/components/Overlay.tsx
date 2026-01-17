@@ -4,7 +4,7 @@ import { RefObject } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type OverlayProps = {
-  targetRef: RefObject<HTMLElement>;
+  targetRef: RefObject<HTMLElement | null>;
 };
 
 const fadeRange = (start: number, mid: number, end: number) => ({

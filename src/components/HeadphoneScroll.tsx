@@ -318,7 +318,7 @@ export default function HeadphoneScroll() {
     // #endregion
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [drawFrame]);
 
   useMotionValueEvent(frameIndex, "change", (latest) => {
     const targetIndex = clamp(latest, 0, frames.length - 1);
